@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пранк над Акбаром</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color:#030f00;
+        }
+
+        .question {
+            font-size: 35px;
+            margin-bottom: 20px;
+            color: #fbfffa;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.1s ease;
+        }
+
+        #btn5 {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="question">?</div>
+    
+    <button class="btn" id="btn2">ДА</button>
+    <button class="btn" id="btn5">НЕТ</button>
+
+    <script>
+        const btn2 = document.getElementById('btn2');
+        const btn5 = document.getElementById('btn5');
+
+        // Обработчик для кнопки "а) 
+        btn2.addEventListener('click', () => {
+            alert("ВУАА Я ТАК И ЗНАЛ");
+        });
+
+        // Обработчик для кнопки "б) 5", чтобы она убегала
+        btn5.addEventListener('mouseover', () => {
+            const randomX = Math.floor(Math.random() * (window.innerWidth - btn5.offsetWidth));
+            const randomY = Math.floor(Math.random() * (window.innerHeight - btn5.offsetHeight));
+            btn5.style.position = 'absolute';
+            btn5.style.left = `${randomX}px`;
+            btn5.style.top = `${randomY}px`;
+        });
+    </script>
+</body>
+</html>
